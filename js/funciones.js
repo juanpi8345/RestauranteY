@@ -1,5 +1,7 @@
 var alto_menu;
 
+new WOW().init();
+
 var acciones = {
 
 	listo:function(){
@@ -55,30 +57,6 @@ var acciones = {
 		}
 	},
 
-	link:function(){
-		var link = this.hash;
-		var url = $(this).attr("href");
-		if($(link).length > 0){
-			acciones.animar_link(link);
-			acciones.cerrar_menu();
-		}else{
-			window.location.url = url;
-		}
-
-	},
-
-	animar_link:function(link){
-		$("html,body").animate({
-			"scrollTop" : $(link).offset().top
-		}, "slow")
-	},
-
-	prox_seccion:function(){
-		var posicion = $(this).closest("section").next("section").offset().top;
-		$("html,body").animate({
-			"scrollTop" : posicion
-		}, "slow");
-	},
 
 	abrir_imagen:function(e){
 		e.preventDefault();
@@ -89,6 +67,8 @@ var acciones = {
 		$(".trama").fadeIn("slow", function() {
 			$(".cuerpo-imagen").fadeIn("fast");
 		});
+
+		$("body").addClass("abierto");
 	},
 
 	cerrar_imagen:function(e){
@@ -97,6 +77,14 @@ var acciones = {
 			$(".trama").fadeOut("fast");
 		})
 
+		$("body").removeClass("abierto");
+
+	},
+
+	precarga:function(){
+		$(".trama2").fadeOut("slow");
+		$("body").removeClass("abierto");
+		$("body").removeClass("desaparecido");
 	},
 
 
@@ -105,5 +93,7 @@ var acciones = {
 $(window).scroll(acciones.oscurecer_menu);
 
 $(document).ready(acciones.listo);
+
+$(document).ready(acciones.precarga);
 
 
