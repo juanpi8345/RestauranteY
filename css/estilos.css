@@ -1,13 +1,25 @@
 *{
 	box-sizing: border-box;
+
+
 }
 
 body{
 	font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+body.abierto{
+	overflow: hidden;
+}
+
+body.desaparecido{
+	visibility: hidden;
 }
 
 html{
 	font-size: 0.78vw;
+	scroll-behavior: smooth;
 }
 
 a{
@@ -16,6 +28,7 @@ a{
 }
 
 /*Clases generales*/
+
 .container{
 	width: 126rem;
 	padding-left: 1rem;
@@ -179,6 +192,39 @@ a{
 	display: none;
 }
 
+.trama2{
+	background-color: #000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	overflow: hidden;
+}
+
+.trama2 h2{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	margin: 0;
+	display: inline-block;
+   	animation-name: palpitar;
+  	animation-duration: 2s;
+   	animation-timing-function: ease;
+    animation-iteration-count: infinite;
+	z-index: 9999;
+}
+
+
+ @keyframes palpitar{
+     0%{opacity: 1;}
+     50%{opacity: 0.2;}
+     100%{opacity: 1;}
+ }
+
+
 .cuerpo-imagen{
 	width: 100%;
 	height: 100%;
@@ -211,20 +257,20 @@ a{
 }
 
 .owl-theme .owl-dots .owl-dot span{
-	background-color: #F9B84D;
+	background-color: #Fff;
 }
 
 
    .owl-theme .owl-dots .owl-dot.active span,
    .owl-theme .owl-dots .owl-dot:hover span{
-      background-color: #ffc53d ;
+      background-color: #F9B84D ;
    }
 
 
 /*Clases y secciones especificas*/
 #cabecera{
 	position: fixed;
-	z-index: 10;
+	z-index: 21;
 	width: 100%;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
@@ -277,7 +323,6 @@ a{
 	height: 100vh;
 	opacity: 0.5;
 	background-image: url(../img/banner.jpg);
-	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -377,7 +422,6 @@ a{
 	background-size: cover;
 	width: 100%;
 	height: 100%;
-	background-position: center;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -414,6 +458,87 @@ a{
 #testimonios p::first-letter{
 	font-size: 1.5rem;
 	color: #F9B84D;
+}
+
+#banner-contacto{
+	background-image: url(../img/nosotros.jpg);
+	display: block;
+	height: 70vh;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+#banner-contacto .trama-contacto{
+	background: rgb(0,0,0);
+	background: radial-gradient(circle, rgba(0,0,0,0.6) 56%, rgba(249,184,77,0.2) 100%);
+   left: 0;
+   top: 0;
+   position: absolute;
+   z-index: 20;
+   width: 100%;
+   height: 70vh;
+}
+
+#banner-contacto .container{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 30;
+	margin: 0;
+}
+
+#contacto{
+	position: relative;
+}
+
+#contacto .seccion{
+	padding-top: 0;
+}
+
+#contacto .fila::first-child{
+	padding-bottom: 0;
+}
+
+#contacto iframe{
+	width: 100%;
+	height: 100%;
+}
+
+#contacto h2{
+	font-size: 3rem;
+}
+
+#contacto a{
+	margin-top: 1rem;
+	font-size: 1rem;
+	color: #000;
+	text-decoration: none;
+}
+
+
+#contacto .form-bloques input,textarea{
+	width: 50%;
+	margin:  1rem;
+	border: 2px solid #F9B84D;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	resize: none;
+	color: #829099;
+	transition: all .5s ease
+}
+
+#contacto .form-bloques :focus{
+	outline: 0.13rem solid #ffc53d;
+  	box-shadow: 0.1rem 0.1rem 1.3rem 0px #ffc53d;
+}
+
+
+#contacto textarea{
+	padding-bottom: 2rem;
 }
 
 
@@ -626,13 +751,34 @@ footer nav{
 		font-size: 3rem;
 	}
 
+	#contacto .none{
+		display: none;
+	}
+
+	#contacto h2{
+		font-size: 4rem;
+	}
+
+	#contacto .form-bloques input, textarea{
+		padding: 1rem;
+		font-size: 2rem;
+	}
+
+	#contacto a{
+		font-size: 2rem;
+	}
+
 	footer p{
-		font-size: 3rem;
+		font-size: 5rem;
 	}
 
 	footer nav i{
 		font-size: 3rem;
 		margin-left: 3rem;
+	}
+
+	footer .corazon{
+		font-size: 3rem;
 	}
 }
 }
@@ -640,6 +786,10 @@ footer nav{
 @media(max-width: 767px){
 
 }
+
+
+
+
 
 
 
