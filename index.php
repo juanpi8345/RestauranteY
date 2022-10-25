@@ -289,7 +289,7 @@
 		<div class="container">
 			<div class="fila fila-centrada">
 					<div class="columna columna-50 alinear-texto ">
-						<p>Hecho con <i class="fa-solid fa-heart corazon"></i> por Juan</p>
+						<h4 class="titulos">Restaurante Y</h4>
 				  </div>
 				  <div class="columna columna-50 alinear-texto">
 				  	<nav>
