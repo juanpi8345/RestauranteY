@@ -165,7 +165,7 @@ a{
 
  .contenedor-imagen:hover img{
 	transform: scale(1.1);
-	filter: blur(5px) grayscale(100%) brightness(0.5);
+	filter: blur(5px) grayscale(0%) brightness(0.5);
 }
 
  .contenedor-imagen .contenido-imagen .titulos{
@@ -577,6 +577,11 @@ footer nav{
 	align-items: center;
 }
 
+footer h4{
+	font-size: 1.7rem !important;
+	color: #fff !important;
+}
+
 
 @media (max-width: 1600px){
 	html{
@@ -646,6 +651,23 @@ footer nav{
 		background-color: #F9B84D;
 	}
 
+	.cuerpo-imagen img {
+    object-fit: contain;
+    object-position: center;
+    height: auto;
+    width: 100%;
+    z-index: 999999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    }
+
+    .cuerpo-imagen a i{
+    	font-size: 6rem;
+    }
+
 	#cabecera .menu.abierto{
 		transform: translateX(0);
 	}
@@ -699,22 +721,26 @@ footer nav{
 	}
 
 	#banner .container p{
-		font-size: 2.5rem;
+		font-size: 3rem;
 		line-height: 1.5;
 	}
 
 
 	#banner .container p::first-letter{
-		font-size: 3rem;
+		font-size: 3.5rem;
 	}
 
 	#banner .container a{
-		font-size: 2rem;
-	
+		font-size: 2.5rem;
+	}
+
+	#banner .img-banner{
+		background-attachment: scroll;
 	}
 
 	#nosotros .nosotros p{
-		font-size: 3rem;
+		font-size: 3.5rem;
+		line-height: 1.5;
 	}
 
 	#servicios .contenedor-servicios {
@@ -744,11 +770,15 @@ footer nav{
 	}
 
 	#testimonios p{
-		font-size: 2.5rem;
+		font-size: 3rem;
 	}
 
 	#testimonios p::first-letter{
-		font-size: 3rem;
+		font-size: 3.5rem;
+	}
+
+	#testimonios .contenedor-testimonios{
+		background-attachment: scroll;
 	}
 
 	#contacto .none{
@@ -756,16 +786,21 @@ footer nav{
 	}
 
 	#contacto h2{
-		font-size: 4rem;
+		font-size: 6rem;
 	}
 
 	#contacto .form-bloques input, textarea{
-		padding: 1rem;
-		font-size: 2rem;
+		padding: 2rem;
+		font-size: 2.5rem;
 	}
 
 	#contacto a{
-		font-size: 2rem;
+		font-size: 2.5rem;
+		color: grey;
+	}
+
+	#banner-contacto{
+		background-attachment: scroll;	
 	}
 
 	footer p{
@@ -780,12 +815,18 @@ footer nav{
 	footer .corazon{
 		font-size: 3rem;
 	}
+
+	footer h4{
+		font-size: 3rem !important;
+		color: #fff !important;
+	}
 }
 }
 
 @media(max-width: 767px){
 
 }
+
 
 
 
